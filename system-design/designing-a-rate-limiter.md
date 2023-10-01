@@ -15,4 +15,7 @@ tags:
 - Exception handling. Should show meaningful error message to user when being throttled
 - High fault tolerance. Failure in rate-limiter should not affect the rest of the system
 
+## High Level Design
 
+- Decide where to place the limiter
+    - Client side rate limiter
