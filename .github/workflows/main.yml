@@ -15,6 +15,6 @@ jobs:
             python-version: '3.9'
             cache: 'pip' # caching pip dependencies
         - run: pip install obsidian-to-hugo 
-        - run: python -m obsidian_to_hugo --obsidian-vault-dir=. --hugo-content-dir=.
+        - run: python -m obsidian_to_hugo --obsidian-vault-dir=system-design --hugo-content-dir=content
 
         
