@@ -21,12 +21,9 @@ jobs:
           with:
             python-version: '3.9'
             cache: 'pip' # caching pip dependencies
-            
-        - run: pip install obsidian-to-hugo 
-        - run: python -m obsidian_to_hugo --obsidian-vault-dir=system-design --hugo-content-dir=isurubuddhika.dev/content/notes
-
-        name: Push to Hugo
         - run: |
+          python -m obsidian_to_hugo --obsidian-vault-dir=system-design --hugo-content-dir=isurubuddhika.dev/content/notes
+          pip install obsidian-to-hugo
           git config user.email ${{ secrets.EMAIL }}
           git config user.name "Isuru Buddhika Pathirana"
           cd isurubuddhika.dev
