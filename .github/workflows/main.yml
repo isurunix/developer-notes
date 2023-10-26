@@ -1,4 +1,4 @@
-name: Deploy blog from Obsidian
+name: convert to hugo
 
 on:
   push:
@@ -8,9 +8,13 @@ on:
 jobs:
   publish_job:
     runs-on: ubuntu-latest
-    name: Publish Obsidian notes to Github pages
     steps:
-      - uses: haxrob/obsidian-to-hugo-pages@main
-        with:
-          vault-path: .
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'
+            cache: 'pip' # caching pip dependencies
+        - run: pip install obsidian-to-hugo 
+        - run: python -m obsidian_to_hugo --obsidian-vault-dir=. --hugo-content-dir=.
+
+        
