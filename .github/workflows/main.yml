@@ -21,6 +21,6 @@ jobs:
             cache: 'pip' # caching pip dependencies
         - run: pip install obsidian-to-hugo 
         - run: python -m obsidian_to_hugo --obsidian-vault-dir=system-design --hugo-content-dir=isurubuddhika.dev/content/notes
-        - run: git commit -a -m "Publishing from Obsidian" && git push --recurse-submodules=on-demand
+        - run: cd isurubuddhika.dev && git commit -a -m "Publishing from Obsidian" && git push --recurse-submodules=on-demand
 
         
