@@ -3,6 +3,7 @@ title: Database Scaling
 tags:
   - database
   - scaling
+date: 2023-09-16
 ---
 
 # Database Scaling
