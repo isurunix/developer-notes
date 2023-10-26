@@ -8,6 +8,8 @@ on:
 jobs:
   convert_to_hugo:
     name: Convert to Hugo
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
@@ -19,8 +21,11 @@ jobs:
           with:
             python-version: '3.9'
             cache: 'pip' # caching pip dependencies
+            
         - run: pip install obsidian-to-hugo 
         - run: python -m obsidian_to_hugo --obsidian-vault-dir=system-design --hugo-content-dir=isurubuddhika.dev/content/notes
+        - run: git config user.email ${{ secrets.EMAIL }}
+        - run: git config user.name "Isuru Buddhika Pathirana"
         - run: cd isurubuddhika.dev && git commit -a -m "Publishing from Obsidian" && git push --recurse-submodules=on-demand
 
         
