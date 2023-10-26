@@ -13,16 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
-          with:
-            submodules: true
-            branches: main
-            fetch-depth: 0
-            
         - uses: actions/setup-python@v4
           with:
             python-version: '3.9'
             cache: 'pip' # caching pip dependencies
-        - run: chmod +x ./push_to_hugo.sh && ./push_to_hugo.sh
+        - run: chmod +x ./convert_to_hugo && ./convert_to_hugo
+
+        name: Publish to Remote
+        uses: dmnemec/copy_file_to_another_repo_action@main
+    
+          
           
     
 
