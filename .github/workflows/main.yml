@@ -30,6 +30,9 @@ jobs:
             user_email: ${{ secrets.EMAIL }}
             user_name: 'isurunix'           # your login
             commit_message: 'Published from Obsidian Notes'
+        
+        - name: Clean up
+          run: rm -rf ./notes
 
     
           
