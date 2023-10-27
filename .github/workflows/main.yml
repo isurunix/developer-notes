@@ -17,7 +17,7 @@ jobs:
           with:
             python-version: '3.9'
             cache: 'pip' # caching pip dependencies
-        - run: chmod +x ./convert_to_hugo.sh && ./convert_to_hugo
+        - run: chmod +x ./convert_to_hugo.sh && ./convert_to_hugo.sh
 
         - name: Publish to Remote
           env: 
