@@ -24,12 +24,12 @@ jobs:
             API_TOKEN_GITHUB: ${{ secrets.API_TOKEN }}
           uses: dmnemec/copy_file_to_another_repo_action@main
           with:
-            source_file: '.converted/'
+            source_file: '.converted/*'
             destination_repo: 'isurunix/isurubuddhika.dev'
             destination_folder: 'notes' # optional
             user_email: ${{ secrets.EMAIL }}
             user_name: 'isurunix'           # your login
-            commit_message: 'A custom message for the commit'
+            commit_message: 'Published from Obsidian Notes'
 
     
           
