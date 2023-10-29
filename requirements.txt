@@ -1,1 +1,0 @@
-obsidian-to-hugo==12023.3.21
